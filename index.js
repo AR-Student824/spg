@@ -1,5 +1,5 @@
 /* Simple yet super secure password generator API & bookmarklet
-No tracking, no databases, or any crap like that, so your passwords are 100% secure
+   No tracking, no databases, or any crap like that, so your passwords are 100% secure
 */
 const app = require('express')()
 function gen(l = 30) {
