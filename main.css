@@ -1,5 +1,3 @@
-/* Using !important for everything to avoid bootstrap overriding this css */
-
 body {
   background-color: rgb(165, 180, 228) !important;
   font-family: 'Poppins', sans-serif !important;
