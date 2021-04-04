@@ -1,0 +1,22 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: white
+}
+
+a {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition-delay: 75ms;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.comment {
+  color: gray;
+}
