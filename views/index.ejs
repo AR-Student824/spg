@@ -23,10 +23,10 @@
     <code><h1 class="txt" id="pw"></h1></code>
     <input id="hiddenInput" style="display:none;" type="text"value='' />
     <br />
-    <a href="javascript:eval(atob('bG9jYXRpb24ucmVsb2FkKCk='))"><button class="btn">Regenerate</button></a>
+    <button class="btn" id="regen">Regenerate</button>
     <button id="copybtn" class="btn">Copy</button>
     <a href="javascript:eval(atob('IWZ1bmN0aW9uKCl7YWxlcnQoYFlvdXIgc2VjdXJlIHBhc3N3b3JkIGlzOiAke2Z1bmN0aW9uKHI9MzApe3ZhciBlPW5ldyBVaW50OEFycmF5KHIpO3JldHVybiB3aW5kb3cuY3J5cHRvLmdldFJhbmRvbVZhbHVlcyhlKSxidG9hKFN0cmluZy5mcm9tQ2hhckNvZGUuYXBwbHkobnVsbCxlKSkucmVwbGFjZSgvXC8vZywiXyIpLnJlcGxhY2UoL1wrL2csIiIpLnJlcGxhY2UoL1w9L2csIiIpLnN1YnN0cmluZygwLHIpfSgpfWApfSgpOw=='))"><button class="btn">SPG Bookmarklet</button></a>
-    <a href="javascript:eval(atob('d2luZG93LmxvY2F0aW9uLmhyZWYgPSAiL3Rlcm1pbmFsIjs'))"><button class="btn">Terminal version</button></a>
+    <button class="btn" id="terminal">Terminal version</button>
     <br /><br />
     <p>Drag the bookmarklet button into your bookmarks bar to quickly generate a password without opening SPG!</p>
     <disclaimer>* SPG is NOT a password storage service, it only GENERATES passwords.<br />Most browsers have a password-remembering system, and we highly recommend you use that to store the passwords.<br />SPG does not track any of its users, and the project is completely open source to prove that fact.</disclaimer>
@@ -62,6 +62,18 @@
           copy.innerText = 'Copy';
         }, 750);
         };
+    </script>
+    <script>
+    const refresh = document.getElementById('regen')
+    refresh.onclick = function() {
+    location.reload()
+    }
+    </script>
+    <script>
+    const term = document.getElementById('terminal')
+    term.onclick = function() {
+    window.location.href = '/terminal'
+    }
     </script>
   </body>
 </html>
