@@ -1,4 +1,4 @@
-![Banner](https://imgur.com/7Gr8y82.png)
+![Banner](https://spg.ar-dev.cf/img.png)
 # Simple Password Generator (SPG)
 A super simple, secure, and fast password generator!
 [Open](https://spg.ar-dev.cf)
