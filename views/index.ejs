@@ -21,12 +21,7 @@
     <br />
     <h2 class="txt">Your secure password is</h2>
     <code><h1 class="txt" id="pw"></h1></code>
-      <input
-      id="ye"
-      style="display: none;"
-      type="text"
-      value=''
-    />
+    <input id="hiddenInput" style="display:none;" type="text"value='' />
     <br />
     <a href="javascript:eval(atob('bG9jYXRpb24ucmVsb2FkKCk='))"><button class="btn">Regenerate</button></a>
     <button id="copybtn" class="btn">Copy</button>
@@ -50,22 +45,21 @@
         var buf = new Uint8Array(length);window.crypto.getRandomValues(buf);
         var value = btoa(String.fromCharCode.apply(null, buf)).replace(/\//g,"_").replace(/\+/g,"").replace(/\=/g,"").substring(0,length)
         document.getElementById('pw').innerHTML = value
-        document.getElementById('ye').value = value
+        document.getElementById('hiddenInput').value = value
         }
         gen()
     </script>
     <script>
     const copy = document.getElementById("copybtn");
-    const code = document.getElementById("ye");
+    const code = document.getElementById("hiddenInput");
         copy.onclick = function() {
         code.setAttribute("style", "display: initial;");
         code.select();
         document.execCommand("copy");
         code.setAttribute("style", "display: none;");
-        const text = copy.innerText;
-        copy.innerText = "Copied";
+        copy.innerText = "Copied!";
         setTimeout(function() {
-          copy.innerText = text;
+          copy.innerText = 'Copy';
         }, 750);
         };
     </script>
