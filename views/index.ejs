@@ -20,11 +20,11 @@
     <img src="https://imgur.com/7Gr8y82.png" style="max-width:100vh;height:auto;">
     <br />
     <h2 class="txt">Your secure password is</h2>
-    <code><h1 class="txt"><%= pw %></h1></code>
+    <code><h1 class="txt" id="pw"></h1></code>
     <br />
     <a href="javascript:eval(atob('bG9jYXRpb24ucmVsb2FkKCk='))"><button class="btn">Regenerate</button></a>
     <a href="javascript:eval(atob('d2luZG93LmxvY2F0aW9uLmhyZWYgPSAiL2FwaSI7'))"><button class="btn">API</button></a>
-    <a href="javascript:eval(atob('KGZ1bmN0aW9uKCl7ZmV0Y2goJy8vcGFzc3dvcmRnZW5hcGkuaGlqc2dlaXByeWdmaXJoLnJlcGwuY28vdGV4dCcpLnRoZW4ocmVzID0+IHJlcy50ZXh0KCkpLnRoZW4odmFsID0+IHthbGVydChgR2VuZXJhdGVkIHBhc3N3b3JkIVxuJHt2YWx9YCl9KS5jYXRjaChlcnI9PnthbGVydCgnU29tZXRoaW5nIHdlbnQgd3JvbmchXG5TcGVjaWZpY2FsbHk6ICcgKyBlcnIpfSl9KSgpOw=='))"><button class="btn">SPG Bookmarklet</button></a>
+    <a href="javascript:eval(atob('IWZ1bmN0aW9uKCl7YWxlcnQoYFlvdXIgc2VjdXJlIHBhc3N3b3JkIGlzOiAke2Z1bmN0aW9uKHI9MzApe3ZhciBlPW5ldyBVaW50OEFycmF5KHIpO3JldHVybiB3aW5kb3cuY3J5cHRvLmdldFJhbmRvbVZhbHVlcyhlKSxidG9hKFN0cmluZy5mcm9tQ2hhckNvZGUuYXBwbHkobnVsbCxlKSkucmVwbGFjZSgvXC8vZywiXyIpLnJlcGxhY2UoL1wrL2csIiIpLnJlcGxhY2UoL1w9L2csIiIpLnN1YnN0cmluZygwLHIpfSgpfWApfSgpOw=='))"><button class="btn">SPG Bookmarklet</button></a>
     <a href="javascript:eval(atob('d2luZG93LmxvY2F0aW9uLmhyZWYgPSAiL3Rlcm1pbmFsIjs'))"><button class="btn">Terminal version</button></a>
     <br /><br />
     <p>Drag the bookmarklet button into your bookmarks bar to quickly generate a password without opening SPG!<br />Info on the API can be found in the Terminal version.</p>
@@ -39,5 +39,13 @@
         <a target="_blank" href="https://github.com/AR-Student824/spg" class="gh">GitHub</a>
       </div>
     </footer>
+    <script>
+        function gen(length = 30) {
+        var buf = new Uint8Array(length);window.crypto.getRandomValues(buf);
+        var value = btoa(String.fromCharCode.apply(null, buf)).replace(/\//g,"_").replace(/\+/g,"").replace(/\=/g,"").substring(0,length)
+        document.getElementById('pw').innerHTML = value
+        }
+        gen()
+    </script>
   </body>
 </html>
