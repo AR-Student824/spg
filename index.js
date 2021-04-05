@@ -22,6 +22,9 @@ app.use((req,res) => {
   else if (req.path === '/terminal'){
     res.render('terminal.ejs')
   }
+  else if (req.path == '/img.png') {
+    res.sendFile(`${__dirname}/img.png`)
+  }
   else {
     res.render('index.ejs')
   }
