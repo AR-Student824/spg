@@ -21,13 +21,19 @@
     <br />
     <h2 class="txt">Your secure password is</h2>
     <code><h1 class="txt" id="pw"></h1></code>
+      <input
+      id="ye"
+      style="display: none;"
+      type="text"
+      value=''
+    />
     <br />
     <a href="javascript:eval(atob('bG9jYXRpb24ucmVsb2FkKCk='))"><button class="btn">Regenerate</button></a>
-    <a href="javascript:eval(atob('d2luZG93LmxvY2F0aW9uLmhyZWYgPSAiL2FwaSI7'))"><button class="btn">API</button></a>
+    <button id="copybtn" class="btn">Copy</button>
     <a href="javascript:eval(atob('IWZ1bmN0aW9uKCl7YWxlcnQoYFlvdXIgc2VjdXJlIHBhc3N3b3JkIGlzOiAke2Z1bmN0aW9uKHI9MzApe3ZhciBlPW5ldyBVaW50OEFycmF5KHIpO3JldHVybiB3aW5kb3cuY3J5cHRvLmdldFJhbmRvbVZhbHVlcyhlKSxidG9hKFN0cmluZy5mcm9tQ2hhckNvZGUuYXBwbHkobnVsbCxlKSkucmVwbGFjZSgvXC8vZywiXyIpLnJlcGxhY2UoL1wrL2csIiIpLnJlcGxhY2UoL1w9L2csIiIpLnN1YnN0cmluZygwLHIpfSgpfWApfSgpOw=='))"><button class="btn">SPG Bookmarklet</button></a>
     <a href="javascript:eval(atob('d2luZG93LmxvY2F0aW9uLmhyZWYgPSAiL3Rlcm1pbmFsIjs'))"><button class="btn">Terminal version</button></a>
     <br /><br />
-    <p>Drag the bookmarklet button into your bookmarks bar to quickly generate a password without opening SPG!<br />Info on the API can be found in the Terminal version.</p>
+    <p>Drag the bookmarklet button into your bookmarks bar to quickly generate a password without opening SPG!</p>
     <disclaimer>* SPG is NOT a password storage service, it only GENERATES passwords.<br />Most browsers have a password-remembering system, and we highly recommend you use that to store the passwords.<br />SPG does not track any of its users, and the project is completely open source to prove that fact.</disclaimer>
     </center>
     <br />
@@ -44,8 +50,24 @@
         var buf = new Uint8Array(length);window.crypto.getRandomValues(buf);
         var value = btoa(String.fromCharCode.apply(null, buf)).replace(/\//g,"_").replace(/\+/g,"").replace(/\=/g,"").substring(0,length)
         document.getElementById('pw').innerHTML = value
+        document.getElementById('ye').value = value
         }
         gen()
+    </script>
+    <script>
+    const copy = document.getElementById("copybtn");
+    const code = document.getElementById("ye");
+        copy.onclick = function() {
+        code.setAttribute("style", "display: initial;");
+        code.select();
+        document.execCommand("copy");
+        code.setAttribute("style", "display: none;");
+        const text = copy.innerText;
+        copy.innerText = "Copied";
+        setTimeout(function() {
+          copy.innerText = text;
+        }, 750);
+        };
     </script>
   </body>
 </html>

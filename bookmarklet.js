@@ -1,4 +1,4 @@
-// v1 (This version may be logged by the host, Replit, as it fetches from serverside, not clientside. Only use this version if you are ok with the risks)
+// v1 (This version no longer works because it may be logged by the host, Replit, as it fetches from serverside, not clientside.)
 (function v1() {
     fetch('//passwordgenapi.hijsgeiprygfirh.repl.co/text').then(res => res.text()).then(val => {
         alert(`Generated password!\n${val}`)

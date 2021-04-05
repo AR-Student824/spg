@@ -10,7 +10,7 @@ const app = require('express')()
 app.use((req,res) => {
   res.header('Access-Control-Allow-Origin', '*')
   if (req.path == '/text') {
-    var pw = gen()
+    var pw = 'SPG Bookmarklet v1 is now deprecated! Please get the new version from spg.ar-dev.cf!'
     res.send(pw)
   } 
   else if (req.path == '/terminal.css') {
