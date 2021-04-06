@@ -8,22 +8,33 @@
 
 const app = require('express')()
 app.use((req,res) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  if (req.path == '/text') {
-    var pw = 'SPG Bookmarklet v1 is now deprecated! Please get the new version from spg.ar-dev.cf!'
-    res.send(pw)
-  } 
-  else if (req.path == '/terminal.css') {
+console.log(req.headers)
+   if (req.path == '/terminal.css' && req.header('sec-fetch-dest') == 'style') {
     res.sendFile(`${__dirname}/terminal.css`)
   }
-  else if (req.path == '/main.css') {
+  else if (req.path == '/main.css' && req.header('sec-fetch-dest') == 'style') {
     res.sendFile(`${__dirname}/main.css`)
   }
   else if (req.path === '/terminal'){
     res.render('terminal.ejs')
   }
-  else if (req.path == '/img.png') {
+  else if (req.path == '/img.png' && req.header('sec-fetch-dest') == 'image') {
     res.sendFile(`${__dirname}/img.png`)
+  }
+  else if (req.path == '/embed.js') {
+    res.sendFile(`${__dirname}/embed.js`)
+  }
+  else if (req.path == '/embed') {
+    res.render('embed.ejs')
+  }
+  else if (req.path == '/embed/images/embedexample.png') {
+    res.sendFile(`${__dirname}/embedexample.png`)
+  }
+  else if (req.path == '/why') {
+    res.render('why.ejs')
+  }
+  else if (req.header('sec-fetch-dest') == 'iframe') {
+    res.render('iframe.ejs')
   }
   else {
     res.render('index.ejs')

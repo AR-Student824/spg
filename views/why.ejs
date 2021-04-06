@@ -16,28 +16,14 @@
         </a>
       </div>
     </nav>
-    <center>
-    <img src="/img.png" style="max-width:100vh;height:auto;">
     <br />
-    <h2 class="txt">Your secure password is</h2>
-    <code><h1 class="txt" id="pw"></h1></code>
-    <input id="hiddenInput" style="display:none;" type="text"value='' />
+    <h1 class="txt">Why should I use a generated password?</h1>
+    <p>Using a non generated password gets your accounts at risk as most non generated passwords can be easily guessed. But, attackers have no way of guessing a string of random letters, numbers, and symbols, which makes this way more secure than non generated passwords</p>
+    <h1 class="txt">Is it secure?</h1>
+    <p>Yup! All generated passwords are generated via your browser, rather than our servers, so it cannot be logged, or stored by us. Your passwords are 100% secure.</p>
     <br />
-    <button class="btn" id="regen">Regenerate</button>
-    <button id="copybtn" class="btn">Copy</button>
-    <a href="javascript:eval(atob('IWZ1bmN0aW9uKCl7YWxlcnQoYFlvdXIgc2VjdXJlIHBhc3N3b3JkIGlzOiAke2Z1bmN0aW9uKHI9MzApe3ZhciBlPW5ldyBVaW50OEFycmF5KHIpO3JldHVybiB3aW5kb3cuY3J5cHRvLmdldFJhbmRvbVZhbHVlcyhlKSxidG9hKFN0cmluZy5mcm9tQ2hhckNvZGUuYXBwbHkobnVsbCxlKSkucmVwbGFjZSgvXC8vZywiXyIpLnJlcGxhY2UoL1wrL2csIiIpLnJlcGxhY2UoL1w9L2csIiIpLnN1YnN0cmluZygwLHIpfSgpfWApfSgpOw=='))"><button class="btn">SPG Bookmarklet</button></a>
-    <button class="btn" id="terminal">Terminal version</button>
+    <disclaimer>Do note, SPG is not a password storage system, only a generator for passwords. Use your browser's built in password storage system for storing passwords.</disclaimer>
     <br /><br />
-    <p>Drag the bookmarklet button into your bookmarks bar to quickly generate a password without opening SPG!</p>
-    <br /><br />
-    <h1 class="txt">More info</h1>
-    <a id="why" style="text-decoration:underline;cursor:pointer;">Why use this?</a>
-    <br />
-    <a id="emb" style="text-decoration:underline;cursor:pointer;">Embed SPG to your signup page</a>
-    <br /><br />
-    <disclaimer>* SPG is NOT a password storage service, it only GENERATES passwords.<br />Most browsers have a password-remembering system, and we highly recommend you use that to store the passwords.<br />SPG does not track any of its users, and the project is completely open source to prove that fact.</disclaimer>
-    </center>
-    <br />
     <footer class="text-center text-white" style="background-color:#c801cb;">
       <div class="text-center p-3">
         © 2021 
@@ -85,18 +71,6 @@
     const term = document.getElementById('terminal')
     term.onclick = function() {
     window.location.href = '/terminal'
-    }
-    </script>
-    <script>
-    const why = document.getElementById('why')
-    why.onclick = function() {
-    window.location.href = '/why'
-    }
-    </script>
-    <script>
-    const emb = document.getElementById('emb')
-    emb.onclick = function() {
-    window.location.href = '/embed'
     }
     </script>
   </body>

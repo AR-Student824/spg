@@ -2,6 +2,8 @@ body {
   background-color: rgb(165, 180, 228) !important;
   font-family: 'Poppins', sans-serif !important;
   background: linear-gradient(to bottom right, #e09eff 51%, #c95af2 87%);
+  margin: 40px auto;
+  padding: 0 20px
 }
 
 .txt {
