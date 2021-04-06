@@ -8,7 +8,6 @@
 
 const app = require('express')()
 app.use((req,res) => {
-console.log(req.headers)
    if (req.path == '/terminal.css' && req.header('sec-fetch-dest') == 'style') {
     res.sendFile(`${__dirname}/terminal.css`)
   }
